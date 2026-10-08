@@ -61,11 +61,24 @@ export default function Navbar() {
               {/* LOGOUT BUTTON */}
               <button
                 type="button"
-                onClick={() => {
+                onClick={async() => {
+                  try{
+                    await fetch("http://localhost:5000/api/auth/logout"),{
+                      method :"POST",
+                      headers :{
+                        Authorization: `Bearer $(token)`,
+                  },
+                }
+                }catch(error){
+                  console.log("error",error)
+                }finally{
                   localStorage.removeItem("token");
                   localStorage.removeItem("name");
                   window.location.reload();
+                }
+                  
                 }}
+                
                 className="
                   shrink-0
                   px-3 sm:px-6

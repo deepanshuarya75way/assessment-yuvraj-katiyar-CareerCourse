@@ -17,6 +17,27 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+
+    // role:{
+    //   type:String,
+    //   enum:["user","admin"],
+    //   default: "user",
+    // },
+    activeSessionId:{
+      type: String,
+      default: null,
+    },
+
+    activeDeviceName:{
+      type: String,
+      default:null,
+    },
+    // activeSessionAt:{
+    //   type: Date,
+    //   default:null,
+    // },
+
+    
   },
   {
     timestamps: true,

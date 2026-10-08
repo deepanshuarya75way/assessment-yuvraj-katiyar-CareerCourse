@@ -26,7 +26,7 @@ function CourseDetails() {
     const fetchCourse = async () => {
       try {
         const response = await fetch(
-          `https://careercourse-3dj3.onrender.com/api/courses/${id}`,
+          `http://localhost:5000/api/courses/${id}`,
         );
 
         const data = await response.json();

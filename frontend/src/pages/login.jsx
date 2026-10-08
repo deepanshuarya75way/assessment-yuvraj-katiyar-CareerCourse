@@ -12,18 +12,22 @@ export default function Login() {
   const [password, setPassword] =
     useState("");
 
+    // const[error, seterror] = useState("");
+    // const[loading ,setloading] = useState(false);
 
 
   const handleSubmit = async (e) => {
 
     e.preventDefault();
+  
+
 
 
 
     try {
 
       const response = await fetch(
-        "https://careercourse-3dj3.onrender.com/api/auth/login",
+        "http://localhost:5000/api/auth/login",
 
         {
           method: "POST",
@@ -35,6 +39,10 @@ export default function Login() {
           body: JSON.stringify({
             email,
             password,
+            deviceName:
+            navigator.userAgentData?.platform ||
+            navigator.platform ||
+            "Unknown Device"
           }),
         }
       );

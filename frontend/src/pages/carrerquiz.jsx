@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { ArrowRight, ArrowLeft, CheckCircle } from "lucide-react";
+import { apiurl } from "../api";
 
 const questions = [
   {
@@ -223,7 +224,7 @@ export default function CareerQuizPage() {
       }
 
       const url =
-        "https://careercourse-3dj3.onrender.com/api/courses" +
+        "http://localhost:5000/api/courses" +
         (params.toString() ? `?${params.toString()}` : "");
 
       const response = await fetch(url);

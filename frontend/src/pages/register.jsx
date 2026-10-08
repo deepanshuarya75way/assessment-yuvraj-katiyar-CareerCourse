@@ -11,7 +11,7 @@ export default function Register() {
 
     try {
       const response = await fetch(
-        "https://careercourse-3dj3.onrender.com/api/auth/register",
+        "http://localhost:5000/api/auth/register",
         {
           method: "POST",
           headers: {
@@ -21,6 +21,7 @@ export default function Register() {
             name,
             email,
             password,
+            // sessionId
           }),
         }
       );

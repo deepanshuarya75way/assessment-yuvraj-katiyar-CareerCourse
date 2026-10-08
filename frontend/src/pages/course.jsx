@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
 import { Star, Clock, Heart, GitCompare, Filter, X } from "lucide-react";
+import {apiurl} from "../api"
 
 export default function CoursesPage() {
   const [searchParams] = useSearchParams();
@@ -46,7 +47,7 @@ export default function CoursesPage() {
     // console.log(url);
     const fetchCourses = async () => {
       try {
-        let url = "https://careercourse-3dj3.onrender.com/api/courses";
+        let url = "http://localhost:5000/api/courses";
 
         if (search) {
           url += `?search=${search}`;

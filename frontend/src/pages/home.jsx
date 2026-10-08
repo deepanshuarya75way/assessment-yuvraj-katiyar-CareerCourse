@@ -116,7 +116,7 @@ export default function HomePage() {
     const fetchTopCourses = async () => {
       try {
         const response = await fetch(
-          "https://careercourse-3dj3.onrender.com/api/courses"
+          "http://localhost:5000/api/courses"
         );
 
         const data = await response.json();

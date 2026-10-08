@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Pencil, Trash2, Plus } from "lucide-react";
+import { apiurl } from "../api";
 
 export default function AdminDashboard() {
   const [courses, setCourses] = useState([]);
@@ -37,7 +38,7 @@ export default function AdminDashboard() {
   const fetchCourses = async () => {
     try {
       const response = await fetch(
-        "https://careercourse-3dj3.onrender.com/api/courses",
+        "http://localhost:5000/api/courses",
       );
 
       const data = await response.json();
@@ -74,7 +75,7 @@ export default function AdminDashboard() {
         // UPDATE
         console.log(editingId);
         const response = await fetch(
-          `https://careercourse-3dj3.onrender.com/api/courses/${editingId}`,
+          `http://localhost:5000/api/courses/${editingId}`,
           {
             method: "PUT",
 
@@ -95,7 +96,7 @@ export default function AdminDashboard() {
         // CREATE
 
         await fetch(
-          "https://careercourse-3dj3.onrender.com/api/courses",
+          "http://localhost:5000/api/courses",
 
           {
             method: "POST",
@@ -146,7 +147,7 @@ export default function AdminDashboard() {
   const handleDelete = async (id) => {
     try {
       await fetch(
-        `https://careercourse-3dj3.onrender.com/api/courses/${id}`,
+        `http://localhost:5000/api/courses/${id}`,
 
         {
           method: "DELETE",
